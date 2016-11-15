@@ -1,6 +1,7 @@
-Hyperloop System Model Overview
-
-The Hyperloop full-system model is decomposed into two main subsystems-the passenger pod and tube. At the top level, analyses was performed integrating the pod and tube systems with a ticket cost module and sample mission module. Tree diagrams for the passenger pod and tube systems can seen below:
+The full-system model of the Hyperloop can be decomposed into two main
+sub-systems: the passenger pod and tube. At the top level, analyses were
+performed integrating the pod and tube systems with a ticket cost  and sample
+mission modules. Below is a tree view and XDSM diagram key which describes how to interpret following diagrams for the pod, tube, and mission subsystems.
 
 \input{../images/xdsm/diagram_styles}
 \usetikzlibrary{arrows,chains,positioning,scopes,shapes.geometric,shapes.misc,shadows}
@@ -13,7 +14,6 @@ The Hyperloop full-system model is decomposed into two main subsystems-the passe
 			\node [FunctionGroup] (ExplicitComponent) {group without implicit solver}; & \node [AnalysisGroup] (ImplicitGroup) {group with implicit solver}; \\
 		};
 	\end{tikzpicture}
-	\caption{Tree view and XDSM diagram key}
 	\label{fig:key}
 \end{figure}
 
@@ -38,9 +38,8 @@ The Hyperloop full-system model is decomposed into two main subsystems-the passe
 	\label{fig:tube}
 \end{figure}
 
-Further sub-systems were broken down within the pod and tube components, and are detailed below. Full documentation can be found in the following sections of the Appendix:
-
-$REFERENCE APPENDIX HERE?$
+Further sub-systems were broken down within the pod and tube components and are detailed below.
+Full documentation can be found in the following sections of the Appendix:
 
 \subsection{Top Level Component Descriptions}
 	\subimport{model_overview/}{top_level_comp_descriptions}

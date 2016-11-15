@@ -40,21 +40,21 @@
 \setcounter{tocdepth}{4}
 % ----------- ------------------------------------------------- --------- %
 
-\title{Hyperloop or Bust}
+\title{Conceptual Feasibility Study of the Hyperloop Vehicle for Next-Generation Transport}
 
 \author{
   Kenneth Decker,\thanks{Aerospace Engineer, University of Arizona}
-  \and Andi Peng,\thanks{Computer Science, Politcal Science, Yale University}
+  \and Andi Peng,\thanks{Cognitive Science, Global Affairs, Yale University}
   \and Colin Summers\thanks{Chemical Engineer, Computer Engineer, University of Washington-Seattle}
   \and Golda Nguyen,\thanks{Mechanical Engineer, Georgia Institute of Technology}
   \and Andrew Oberlander,\thanks{Mechanical Engineer, Brown University}
   \and Gazi Sakib,\thanks{Physics, Mechanical Engineer, Stony Brook University}
   \and Nathan Sharifrazi,\thanks{Aerospace Engineer, Mechanical Engineer, University of California-Irvine}
-  \and Jeffrey Chin,\thanks{Aerospace Engineer, Propulsion Systems Analysis Branch, Mail Stop 5-10, AIAA Member}
-  \and Justin Gray,\thanks{Aerospace Engineer, MDAO Branch,Mail Stop 5-10, AIAA Member}
-  \and Christopher Heath,\thanksibid{9}
-  \and Kenneth Moore,\thanksibid{9}
-  \and Robert Falck,\thanksibid{9}
+  \and Jeffrey Chin,\thanks{Aerospace Engineer, Propulsion Systems Analysis Branch, Mail Stop 5-11, AIAA Member}
+  \and Justin Gray,\thanksibid{8}
+  \and Christopher Heath,\thanksibid{8}
+  \and Kenneth Moore,\thanksibid{8}
+  \and Robert Falck,\thanks{Aerospace Engineer, Mission Architecture and Analysis Branch, Mail Stop 162-2, AIAA Member}
   \\
   {\normalsize\itshape
   NASA Glenn Research Center, Cleveland, OH}
@@ -95,13 +95,22 @@
 \usepackage{bm} %The bm pack­age de­fines a com­mand \bm which makes its ar­gu­ment bold. (math)
 \usepackage{tabulary} %wider table
 \usepackage{gensymb} %degree symbol
+\usepackage{letltxmacro}
 \usepackage{booktabs} % en­hances the qual­ity of ta­bles
 \usepackage{tikz} % used to generate XDSM key
+\usepackage[trackold]{trackchanges} % used to annotate and collaborate on document editing
+
+\addeditor{Colin} % adds editor to trackchanges
 
 \lstset{frame=single}
 \newcommand{\txt}{\textrm}
 
 \newcommand{\cent}{{\mathrm{c}\mkern-6.5mu{\mid}}}
+
+% change default figure size
+
+\LetLtxMacro{\OldIncludegraphics}{\includegraphics}
+\renewcommand{\includegraphics}[2][]{\OldIncludegraphics[width=3.25in,height=3.5in,keepaspectratio, #1]{#2}}
 
 \captionsetup[figure]{margin=5pt,font=small,labelfont=bf,textfont=bf,justification=justified,}
 \captionsetup[wrapfigure]{margin=5pt,font=small,labelfont=bf,justification=justified,singlelinecheck=off}
@@ -152,7 +161,7 @@
 \maketitle
 % \subimport{sections/}{abstract}
 \newpage
-\tableofcontents
+%\tableofcontents
 %\listoffigures
 %\listoftables
 \printnomenclature
@@ -171,9 +180,24 @@
 \section{Appendix}
 	\subimport{sections/}{appendix}
 
+\bibliographystyle{unsrt} %sorted by appearence, consider using natbib?
+\bibliography{heading}
 
 
-	\bibliographystyle{unsrt} %sorted by appearence, consider using natbib?
-	\bibliography{heading}
+\nomenclature{L}{Length (m)}
+\nomenclature{P_{rad}}{Radiated Power (W)}
+\nomenclature{g}{Acceleration of gravity, 9.81 ($\frac{m}{s^{2}}$)}
+\nomenclature{\upsilon}{Kinematic Viscosity ($\frac{m^{2}}{s}$)}
+\nomenclature{Pr}{Prandtl Number, $\frac{\upsilon}{\alpha}$}
+\nomenclature{h}{Heat transfer coefficient ($\frac{W}{m^{2}-K}$)}
+\nomenclature{k}{Thermal Conductivity ($\frac{W}{m-K}$) }
+\nomenclature{P}{Pressure ($\frac{N}{m^{2}}$)}
+\nomenclature{PR}{Pressure Ratio}
+\nomenclature{\dot{m}}{Mass flow rate}
+\nomenclature{T}{Temperature (K)}
+\nomenclature{C_{p}}{Heat capacity at constant pressure ($\frac{J}{kg-K}$) }
+\nomenclature{Q}{Heat flow rate (W)}
+\nomenclature{\gamma}{Heat Capacity Ratio}
+\nomenclature{MN}{Mach Number}
 
 \end{document}
